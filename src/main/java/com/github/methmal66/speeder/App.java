@@ -6,6 +6,9 @@ package com.github.methmal66.speeder;
  */
 public class App {
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        String fileName = args[0];
+        FileHandle handle = new FileHandle(fileName);
+        String file = handle.findAbsoluteFileName();
+        System.out.println(file);
     }
 }
