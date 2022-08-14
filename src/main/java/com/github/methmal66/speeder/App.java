@@ -8,13 +8,13 @@ import java.io.IOException;
  */
 public class App {
     public static void main(String[] args) throws IOException {
-        String fileName = args[0];
-        FileHandle handle = new FileHandle(fileName);
-        String file = handle.findAbsoluteFileName();
-        String words[] = handle.readContentWordByWord(file);
+        final String fileName = args[0];
+        final FileHandle handle = new FileHandle(fileName);
+        final String file = handle.findAbsoluteFileName();
+        final String words[] = handle.readContentWordByWord(file);
 
-        for (String word : words) {
-            System.out.println(word);
-        }
+        final int wpm = Integer.parseInt(args[1]);
+        final Schedule schedule = new Schedule(wpm, words);
+        final int delay = schedule.calculateDelay();
     }
 }
