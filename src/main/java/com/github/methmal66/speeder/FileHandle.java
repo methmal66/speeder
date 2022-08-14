@@ -19,7 +19,7 @@ public class FileHandle {
         return file.toString();
     }
 
-    public String readContent(String filePath) throws IOException {
+    public String[] readContentWordByWord(String filePath) throws IOException {
         BufferedReader br = new BufferedReader(new FileReader(filePath));
         try {
             StringBuilder sb = new StringBuilder();
@@ -31,7 +31,7 @@ public class FileHandle {
                 line = br.readLine();
             }
             final String content = sb.toString();
-            return content;
+            return content.split(" ");
 
         } finally {
             br.close();
