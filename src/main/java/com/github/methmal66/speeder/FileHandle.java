@@ -31,7 +31,7 @@ public class FileHandle {
                 line = br.readLine();
             }
             final String content = sb.toString();
-            return content.split(" ");
+            return content.replace("\n", " ").split(" ");
 
         } finally {
             br.close();
