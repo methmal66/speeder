@@ -7,7 +7,7 @@ import java.io.IOException;
  *
  */
 public class App {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, InterruptedException {
         final String fileName = args[0];
         final FileHandle handle = new FileHandle(fileName);
         final String file = handle.findAbsoluteFileName();
@@ -16,5 +16,6 @@ public class App {
         final int wpm = Integer.parseInt(args[1]);
         final Schedule schedule = new Schedule(wpm, words);
         final int delay = schedule.calculateDelay();
+        schedule.printWordsTemporarily(words, delay);
     }
 }
