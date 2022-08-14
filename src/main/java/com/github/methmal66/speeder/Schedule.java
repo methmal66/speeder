@@ -14,4 +14,11 @@ public class Schedule {
         final int delayInMillies = (int) Math.ceil(delayInMinutes * SECONDS_PER_MINUTE * MILLIS_PER_SECOND);
         return delayInMillies;
     }
+
+    public void printWordsTemporarily(String words[], int millis) throws InterruptedException {
+        for (String word : words) {
+            System.out.println(word);
+            Thread.sleep(millis);
+        }
+    }
 }
