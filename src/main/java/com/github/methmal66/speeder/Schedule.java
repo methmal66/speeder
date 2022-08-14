@@ -19,6 +19,8 @@ public class Schedule {
         for (String word : words) {
             System.out.println(word);
             Thread.sleep(millis);
+            System.out.print(String.format("\033[%dA", 1)); // Move up
+            System.out.print("\033[2K"); // Erase line content
         }
     }
 }
