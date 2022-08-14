@@ -11,7 +11,10 @@ public class App {
         String fileName = args[0];
         FileHandle handle = new FileHandle(fileName);
         String file = handle.findAbsoluteFileName();
-        String content = handle.readContent(file);
-        System.out.println(content);
+        String words[] = handle.readContentWordByWord(file);
+
+        for (String word : words) {
+            System.out.println(word);
+        }
     }
 }
