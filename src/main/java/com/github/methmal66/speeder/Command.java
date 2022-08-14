@@ -22,7 +22,7 @@ public class Command {
     }
 
     private void displayHelpMenu(Options ops) {
-        if (ops.hasOption("h")) {
+        if (cmd.hasOption("h")) {
             final HelpFormatter formatter = new HelpFormatter();
             final String header = "Improve your speed reading skill with a simple CLI program";
             final String footer = "Please report issues at https://github.com/methmal66/speeder";
