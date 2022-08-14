@@ -7,4 +7,6 @@ This is a maven project. So you must install maven in your machine. Then run `mv
 # For users
 Download the latest jar executable from the releases.<br>
 Execute it with input file and wpm(Words Per Minutes) as the command line arguments.<br>
-ex: `java -jar speeder.jar input.txt 200`
+ex: `java -jar speeder.jar -f input.txt -w 200`
+
+display help menu using `java -jar speeder.jar -h`
