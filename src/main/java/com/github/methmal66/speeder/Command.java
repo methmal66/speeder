@@ -10,6 +10,12 @@ import org.apache.commons.cli.ParseException;
 public class Command {
     private CommandLine cmd;
 
+    /**
+     * Create the options for argument parser. Then parse the args throgh the
+     * parser. Throws ParseException when required parameters are not given
+     * 
+     * @param args String[] command line arguments of java
+     */
     public Command(String[] args) throws ParseException {
         final Options options = new Options();
         options.addOption("f", "file", true, "File which containing the text to be displayed");
@@ -21,6 +27,13 @@ public class Command {
         displayHelpMenu(options);
     }
 
+    /**
+     * Display the help menu when user enter --help or -h as a command line
+     * argument. Then program is terminated successfully without going to execute
+     * the rest.
+     * 
+     * @param ops Options specified by commons cli for itself
+     */
     private void displayHelpMenu(Options ops) {
         if (cmd.hasOption("h")) {
             final HelpFormatter formatter = new HelpFormatter();
@@ -31,10 +44,21 @@ public class Command {
         }
     }
 
+    /**
+     * Get the file name which was taken from the argemnet parser as --file or -f
+     * 
+     * @return String relative file name of which the text contains
+     */
     public String parseFile() {
         return cmd.getOptionValue("f");
     }
 
+    /**
+     * Get the Word Per Minute rate which was taken from the arguement parser as
+     * --wpm or -w
+     * 
+     * @return int wpm rate
+     */
     public int parseWPM() {
         return Integer.parseInt(cmd.getOptionValue("w"));
     }
