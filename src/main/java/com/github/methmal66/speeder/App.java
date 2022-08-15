@@ -17,7 +17,7 @@ public class App {
         final String words[] = handle.readContentWordByWord(file);
 
         final int wpm = cmd.parseWPM();
-        final Schedule schedule = new Schedule(wpm, words);
+        final Schedule schedule = new Schedule(wpm);
         final int delay = schedule.calculateDelay();
         schedule.printWordsTemporarily(words, delay);
     }
