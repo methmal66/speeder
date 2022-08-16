@@ -1,0 +1,19 @@
+name: Greetings
+
+on:
+  pull_request:
+    branches:
+      - develop
+
+jobs:
+  greeting:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      pull-requests: write
+    steps:
+    - uses: actions/first-interaction@v1
+      with:
+        repo-token: ${{ secrets.GH_TOKEN }}
+        issue-message: "Thank you for creating the first issue on my repo!"
+        pr-message: "Thank you for making the first PR on my repo! This could be the beginning of something big"
